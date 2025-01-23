@@ -9,6 +9,7 @@ defined('ABSPATH') || die('No script kiddies please!');
 
 require_once TO_PATH . 'options/option-tab.php';
 require_once TO_PATH . 'options/outputs.php';
+require_once TO_PATH . 'options/shortcodes.php';
 
 
 use Carbon_Fields\Container;

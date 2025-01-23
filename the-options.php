@@ -78,5 +78,7 @@ add_filter('bricks/code/echo_function_names', function () {
         'to_get_company_name',
         'to_get_company_address',
         'to_get_company_description',
+        'to_get_image_galery',
+        'to_sc_phone',
     ];
 });

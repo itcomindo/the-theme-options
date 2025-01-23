@@ -51,6 +51,30 @@ function to_tab_company()
             Field::make('text', 'to_email_address', 'Email Address')
                 ->set_help_text('Enter your email address here'),
 
+            Field::make('complex', 'to_gallery_items', 'Gallery Items')
+                ->add_fields(array(
+                    Field::make('image', 'to_image', 'Image')
+                        ->set_help_text('Upload an image for the gallery')
+                        ->set_value_type('url'),
+                    Field::make('text', 'to_title', 'Title')
+                        ->set_help_text('Enter a title for this image'),
+                ))
+
+                ->set_layout('tabbed-horizontal'),
+
+            Field::make('complex', 'to_testimonial_clients', 'Testimonial Clients')
+                ->add_fields(array(
+                    Field::make('image', 'to_image_tm', 'Image')
+                        ->set_help_text('Upload an image client')
+                        ->set_value_type('url'),
+                    Field::make('text', 'to_name_client_tm', 'Client Name')
+                        ->set_help_text('Enter a name of client'),
+                    Field::make('text', 'to_testi_client_tm', 'Client Testimonial')
+                        ->set_help_text('Enter a client testimonial'),
+                ))
+
+                ->set_layout('tabbed-horizontal'),
+
 
         ),
     );

@@ -71,16 +71,65 @@ function to_get_cta($what = 'display')
     } elseif ('email' === $what) {
         $num = carbon_get_theme_option('to_email_address');
         return $num;
-    } else {
-        $num = 'please provide a valid argument';
+    } elseif ('num' === $what) {
+        $num = carbon_get_theme_option('to_phone_number');
+        $num = preg_replace('/^08/', '628', $num);
+        $num = preg_replace('/\D/', '', $num);
         return $num;
+    } else {
+        return '6282233566320';
     }
 }
-
-
-
 
 function to_get_company_description()
 {
     return esc_html(carbon_get_theme_option('to_company_description'));
 }
+
+function to_get_image_galery()
+{
+    $galleries = carbon_get_theme_option('to_gallery_items');
+    if ($galleries) {
+        foreach ($galleries as $gallery) {
+            $image = $gallery['to_image'];
+            $title = $gallery['to_title'];
+
+?>
+            <div class="image-item">
+                <img src="<?php echo $image; ?>" alt="<?php echo $title; ?>">
+            </div>
+        <?php
+
+        }
+    }
+}
+
+add_shortcode('to_get_client_logo', 'to_get_image_galery');
+
+function to_get_testimonial_clients()
+{
+    $testimonials = carbon_get_theme_option('to_testimonial_clients');
+    if ($testimonials) {
+        foreach ($testimonials as $testimonial) {
+            $image = $testimonial['to_image_tm'];
+            $name = $testimonial['to_name_client_tm'];
+            $testi = $testimonial['to_testi_client_tm'];
+
+        ?>
+
+            <div class="testimonial-item">
+                <div class="testimonial-image">
+                    <img src="<?php echo $image; ?>" alt="<?php echo $name; ?>">
+                </div>
+                <div class="testimonial-content">
+                    <h3><?php echo $name; ?></h3>
+                    <p><?php echo $testi; ?></p>
+                </div>
+            </div>
+
+<?php
+        }
+    }
+}
+
+add_shortcode('to_get_testimonial_clients', 'to_get_testimonial_clients');
