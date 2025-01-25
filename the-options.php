@@ -80,7 +80,24 @@ add_filter('bricks/code/echo_function_names', function () {
         'to_get_company_description',
         'to_get_image_galery',
         'to_sc_phone',
-        'to_get_tabs',
+        // 'to_get_tabs',
         'to_sc_get_button_whatsapp',
+        'to_sc_tab_content',
+        'to_sc_tab_trigger',
     ];
 });
+
+
+
+function to_disable_plugin_script()
+{
+    $to_disable_plugin_script = carbon_get_theme_option('to_disable_plugin_script');
+    if (true === $to_disable_plugin_script) {
+        add_action('wp_enqueue_scripts', 'mmx_load_aditional_libs');
+        add_action('wp_enqueue_scripts', 'mmx_load_gsap');
+        add_action('wp_enqueue_scripts', 'mmx_load_lotties');
+        add_action('wp_enqueue_scripts', 'mmx_load_flickity');
+        add_action('wp_enqueue_scripts', 'mmx_load_tabs');
+    }
+}
+// add_action('init', 'to_disable_plugin_script');

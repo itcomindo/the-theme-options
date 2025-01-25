@@ -110,3 +110,23 @@ function to_tab_sections()
         ),
     );
 }
+
+
+
+//---------------------------------------
+// tab General Start
+//---------------------------------------
+function to_tab_general()
+{
+    return array_merge(
+        array(
+            Field::make('checkbox', 'to_disable_plugin_script', 'Disable Plugin Script')
+                ->set_option_value('yes')
+                ->set_help_text('Enable this option to load the plugin script'),
+        ),
+    );
+}
+
+//----------------------------------------
+// tab General End
+//----------------------------------------
