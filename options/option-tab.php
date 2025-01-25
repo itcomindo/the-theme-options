@@ -79,3 +79,34 @@ function to_tab_company()
         ),
     );
 }
+
+
+// Tab Sections.
+function to_tab_sections()
+{
+    return array_merge(
+        array(
+            // Section tab start.
+            Field::make('complex', 'to_tabs', 'Tabs')
+                ->set_layout('tabbed-horizontal')
+                ->set_max(3)
+                ->add_fields(
+                    array(
+                        // Tab Title.
+                        Field::make('text', 'to_tab_title', 'Tab Title')
+                            ->set_help_text('Enter a title for this tab'),
+
+                        // Tab Content.
+                        Field::make('rich_text', 'to_tab_content', 'Tab Content')
+                            ->set_help_text('Enter the content for this tab'),
+
+                        // Tab Image.
+                        Field::make('image', 'to_tab_image', 'Tab Image')
+                            ->set_help_text('Upload an image for this tab')
+                            ->set_value_type('url'),
+                    )
+                )
+            // Section tab end.
+        ),
+    );
+}

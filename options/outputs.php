@@ -127,9 +127,69 @@ function to_get_testimonial_clients()
                 </div>
             </div>
 
-<?php
+            <?php
         }
     }
 }
 
 add_shortcode('to_get_testimonial_clients', 'to_get_testimonial_clients');
+
+
+
+
+
+
+
+/**
+ * TAB Section
+ */
+function to_get_tabs($tab_what = 'trigger')
+{
+    $tabs = carbon_get_theme_option('to_tabs');
+    if ($tabs) {
+        if ('trigger' === $tab_what) {
+            $count = 0;
+            foreach ($tabs as $tab) {
+                $count++;
+                $tab_title = $tab['to_tab_title'];
+            ?>
+                <div class="tab-trigger tab-<?php echo esc_html($count); ?>" data-tab="tab-<?php echo esc_html($count); ?>">
+                    <h3 class="tab-head"><?php echo esc_html($tab_title); ?></h3>
+                </div>
+            <?php
+            }
+        } elseif ('content' === $tab_what) {
+            $count = 0;
+            foreach ($tabs as $tab) {
+                $count++;
+                $tab_title = $tab['to_tab_title'];
+                $tab_image = $tab['to_tab_image'];
+                $tab_content = $tab['to_tab_content'];
+
+                // Eperimental start
+                // if (is_array($tab_content)) {
+                //     $tab_content = implode('', $tab_content); // Gabungkan array menjadi string
+                // } elseif (!is_string($tab_content)) {
+                //     $tab_content = ''; // Berikan nilai kosong jika bukan string
+                // }
+
+                // Eperimental end
+
+            ?>
+                <div class="tab-content animate__animated tab-<?php echo esc_html($count); ?>" data-tab="tab-<?php echo esc_html($count); ?>">
+                    <div class="tbc-left animate__animated">
+                        <?php
+                        echo apply_filters('the_content', $tab_content);
+                        ?>
+                    </div>
+                    <div class="tbc-right">
+                        <div class="tbc-img-wr animate__animated">
+                            <img src="<?php echo esc_url($tab_image); ?>" alt="<?php echo esc_html($tab_title); ?>">
+                        </div>
+                    </div>
+                </div>
+<?php
+            }
+        }
+    }
+}

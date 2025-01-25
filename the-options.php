@@ -80,5 +80,7 @@ add_filter('bricks/code/echo_function_names', function () {
         'to_get_company_description',
         'to_get_image_galery',
         'to_sc_phone',
+        'to_get_tabs',
+        'to_sc_get_button_whatsapp',
     ];
 });
