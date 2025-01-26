@@ -87,6 +87,9 @@ function to_tab_sections()
     return array_merge(
         array(
             // Section tab start.
+            Field::make('separator', 'septotabs', 'Tabs')
+                ->set_classes('tosep-parent')
+                ->set_help_text('Add tabs to your page'),
             Field::make('complex', 'to_tabs', 'Tabs')
                 ->set_layout('tabbed-horizontal')
                 ->set_max(3)
@@ -105,7 +108,42 @@ function to_tab_sections()
                             ->set_help_text('Upload an image for this tab')
                             ->set_value_type('url'),
                     )
-                )
+                )->set_header_template('
+                                <% if (to_tab_title) { %>
+                                    <%- to_tab_title %>
+                                <% } else { %>
+                                    Tab
+                                <% } %>
+                            '),
+            // Section Testimonial
+            Field::make('separator', 'septotestimonial', 'Section Testimonial')
+                ->set_classes('tosep-parent')
+                ->set_help_text('Add tabs to your page'),
+            Field::make('complex', 'to_testimonials', 'Tabs')
+                ->set_layout('tabbed-horizontal')
+                ->set_max(3)
+                ->add_fields(
+                    array(
+                        // Tab Title.
+                        Field::make('text', 'to_testi_author', 'Testi author')
+                            ->set_help_text('Enter a author'),
+
+                        // Tab Content.
+                        Field::make('textarea', 'to_testi_content', 'Testi Content')
+                            ->set_help_text('Enter the content'),
+
+                        // Tab Image.
+                        Field::make('image', 'to_testi_image', 'Testimonial Image')
+                            ->set_help_text('Upload an image')
+                            ->set_value_type('url'),
+                    )
+                )->set_header_template('
+                        <% if (to_testi_author) { %>
+                            <%- to_testi_author %>
+                        <% } else { %>
+                            Author
+                        <% } %>
+                    ')
             // Section tab end.
         ),
     );

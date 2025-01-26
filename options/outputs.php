@@ -133,3 +133,23 @@ function to_get_testimonial_clients()
 }
 
 add_shortcode('to_get_testimonial_clients', 'to_get_testimonial_clients');
+
+
+
+function to_dummy_testi()
+{
+    $output = '';
+    for ($i = 0; $i < 4; $i++) {
+        $output .= '<div class="testi-item">';
+        $output .= '<div class="testi-img-wr">';
+        $output .= '<img src="https://25-gpps.local/wp-content/uploads/client-logos/ulimited-billiard-&-caf%C3%A9.webp" alt="Client Name" class="testi-img fi">';
+        $output .= '</div>';
+        $output .= '<div class="testi-content">';
+        $output .= '<h3 class="testi-author">Client Name</h3>';
+        $output .= '<blockquote class="testi-quote">lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis lorem ut libero malesuada feugiat. Nulla porttitor accumsan tincidunt.</blockquote>';
+        $output .= '</div>';
+        $output .= '</div>';
+    }
+    return $output;
+}
+add_shortcode('to_dummy_testi', 'to_dummy_testi');

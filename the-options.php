@@ -69,6 +69,7 @@ add_action('plugins_loaded', 'wsp_cf_loaded');
 
 require_once TO_PATH . 'assets/assets.php';
 require_once TO_PATH . 'options/options.php';
+require_once TO_PATH . 'client-logos.php';
 
 
 add_filter('bricks/code/echo_function_names', function () {
@@ -80,10 +81,11 @@ add_filter('bricks/code/echo_function_names', function () {
         'to_get_company_description',
         'to_get_image_galery',
         'to_sc_phone',
-        // 'to_get_tabs',
         'to_sc_get_button_whatsapp',
         'to_sc_tab_content',
         'to_sc_tab_trigger',
+        'to_client_logos',
+        'to_dummy_testi',
     ];
 });
 

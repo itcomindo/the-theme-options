@@ -1,5 +1,5 @@
 window.addEventListener("DOMContentLoaded", () => {
-    var elem = document.querySelector("#logos");
+    var elem = document.querySelector("#flkpr");
     var flkty = new Flickity(elem, {
         // options
         cellAlign: "center",

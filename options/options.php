@@ -26,9 +26,9 @@ use Carbon_Fields\Field;
 function to_theme_options()
 {
     Container::make('theme_options', 'Theme Options')
+        ->add_tab('Section', to_tab_sections())
         ->add_tab('General', to_tab_general())
-        ->add_tab('Contact', to_tab_company())
-        ->add_tab('Section', to_tab_sections());
+        ->add_tab('Contact', to_tab_company());
 }
 
 add_action('carbon_fields_register_fields', 'to_theme_options');
