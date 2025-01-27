@@ -142,7 +142,7 @@ function to_dummy_testi()
     for ($i = 0; $i < 4; $i++) {
         $output .= '<div class="testi-item">';
         $output .= '<div class="testi-img-wr">';
-        $output .= '<img src="https://25-gpps.local/wp-content/uploads/client-logos/ulimited-billiard-&-caf%C3%A9.webp" alt="Client Name" class="testi-img fi">';
+        $output .= '<img src="https://gpps.itcomindo.com/wp-content/uploads/2025/01/pt-mulyatek-kreasi-andalan.webp" alt="Client Name" class="testi-img fi">';
         $output .= '</div>';
         $output .= '<div class="testi-content">';
         $output .= '<h3 class="testi-author">Client Name</h3>';
