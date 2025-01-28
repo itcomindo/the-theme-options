@@ -27,9 +27,10 @@ function mmx_load_aditional_libs()
 
     wp_enqueue_script(
         "myjquery",
-        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js",
+        // "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js",
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
         [],
-        '3.7.1',
+        '3.6.0',
         true
     );
 }

@@ -72,6 +72,8 @@ require_once TO_PATH . 'options/options.php';
 require_once TO_PATH . 'client-logos.php';
 
 
+
+
 add_filter('bricks/code/echo_function_names', function () {
     return [
         'to_get_cta',
@@ -86,20 +88,6 @@ add_filter('bricks/code/echo_function_names', function () {
         'to_sc_tab_trigger',
         'to_client_logos',
         'to_dummy_testi',
+        'to_get_experience_year',
     ];
 });
-
-
-
-function to_disable_plugin_script()
-{
-    $to_disable_plugin_script = carbon_get_theme_option('to_disable_plugin_script');
-    if (true === $to_disable_plugin_script) {
-        add_action('wp_enqueue_scripts', 'mmx_load_aditional_libs');
-        add_action('wp_enqueue_scripts', 'mmx_load_gsap');
-        add_action('wp_enqueue_scripts', 'mmx_load_lotties');
-        add_action('wp_enqueue_scripts', 'mmx_load_flickity');
-        add_action('wp_enqueue_scripts', 'mmx_load_tabs');
-    }
-}
-// add_action('init', 'to_disable_plugin_script');

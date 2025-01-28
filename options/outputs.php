@@ -153,3 +153,11 @@ function to_dummy_testi()
     return $output;
 }
 add_shortcode('to_dummy_testi', 'to_dummy_testi');
+
+
+function to_get_experience_year()
+{
+    $start = 2008;
+    $now = (int) date('Y');
+    return $now - $start;
+}
