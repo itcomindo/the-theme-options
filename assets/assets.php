@@ -158,6 +158,20 @@ function mmx_load_section_features_card()
 
 
 
+//---------------------------------------
+// section features Start
+//---------------------------------------
+function mmx_load_whatsappform_script()
+{
+    // Load Features Cards.
+    wp_enqueue_script('whatsappform', TO_URL . '/assets/js/whatsapp-form.min.js', array(), '1.0', true);
+}
+//----------------------------------------
+// section features End
+//----------------------------------------
+
+
+
 
 
 add_action('wp_enqueue_scripts', 'mmx_load_aditional_libs');
@@ -166,3 +180,4 @@ add_action('wp_enqueue_scripts', 'mmx_load_lotties');
 add_action('wp_enqueue_scripts', 'mmx_load_flickity');
 add_action('wp_enqueue_scripts', 'mmx_load_tabs');
 add_action('wp_enqueue_scripts', 'mmx_load_section_features_card');
+add_action('wp_enqueue_scripts', 'mmx_load_whatsappform_script');

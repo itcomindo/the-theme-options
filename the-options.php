@@ -70,6 +70,8 @@ add_action('plugins_loaded', 'wsp_cf_loaded');
 require_once TO_PATH . 'assets/assets.php';
 require_once TO_PATH . 'options/options.php';
 require_once TO_PATH . 'client-logos.php';
+require_once TO_PATH . 'faq.php';
+require_once TO_PATH . 'whatsapp-form.php';
 
 
 
@@ -89,5 +91,7 @@ add_filter('bricks/code/echo_function_names', function () {
         'to_client_logos',
         'to_dummy_testi',
         'to_get_experience_year',
+        'to_get_faq',
+        'to_get_whatsapp_form',
     ];
 });
