@@ -93,5 +93,6 @@ add_filter('bricks/code/echo_function_names', function () {
         'to_get_experience_year',
         'to_get_faq',
         'to_get_whatsapp_form',
+        'to_get_testimonials',
     ];
 });

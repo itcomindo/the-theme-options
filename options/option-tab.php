@@ -121,7 +121,7 @@ function to_tab_sections()
                 ->set_help_text('Add tabs to your page'),
             Field::make('complex', 'to_testimonials', 'Tabs')
                 ->set_layout('tabbed-horizontal')
-                ->set_max(3)
+                ->set_max(8)
                 ->add_fields(
                     array(
                         // Tab Title.

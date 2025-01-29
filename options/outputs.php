@@ -127,7 +127,7 @@ function to_get_testimonial_clients()
                 </div>
             </div>
 
-<?php
+        <?php
         }
     }
 }
@@ -153,6 +153,43 @@ function to_dummy_testi()
     return $output;
 }
 add_shortcode('to_dummy_testi', 'to_dummy_testi');
+
+
+//---------------------------------------
+// Get Testimonials Start
+//---------------------------------------
+function to_get_testimonials()
+{
+    $testimonials = carbon_get_theme_option('to_testimonials');
+    if ($testimonials) {
+        foreach ($testimonials as $testi) {
+            $author = $testi['to_testi_author'];
+            $image = $testi['to_testi_image'];
+            $testi = $testi['to_testi_content'];
+        ?>
+
+            <div class="testi-item">
+                <div class="testi-image-wr">
+                    <img src="<?php echo esc_url($image); ?>" alt="<?php echo esc_html($author); ?>">
+                </div>
+                <div class="testi-content">
+                    <h3 class="testi-author"><?php echo esc_html($author); ?></h3>
+                    <blockquote><?php echo esc_html($testi); ?></blockquote>
+                </div>
+            </div>
+
+        <?php
+        }
+    } else {
+        ?>
+        <h3>Tidak ada testimonials</h3>
+<?php
+    }
+}
+add_shortcode('to_get_testimonials', 'to_get_testimonials');
+//----------------------------------------
+// Get Testimonials End
+//----------------------------------------
 
 
 function to_get_experience_year()
